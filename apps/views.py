@@ -2,10 +2,10 @@ from django.shortcuts import render
 from rest_framework.response import Response 
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
-from .models import Category, Card, Sub_category, Consumption, Plastic_card, Product, Debtors, Workers, Dollars, Camunalca
+from .models import Category, Card, Sub_category, Consumption, Plastic_card, Product, Debtors, Workers, Dollars, Camunalca, Department, Employee
 from .serializers import CategorySerializer, CardSerializer, Sub_categorySerializer, ConsumptionSerializer
 from .serializers import Plastic_cardSerializer, ProductSerializer, DebtorsSerializer 
-from .serializers import WorkersSerializer, DollarsSerializer, CamunalcaSerializer
+from .serializers import WorkersSerializer, DollarsSerializer, CamunalcaSerializer, EmployeeSerializer, DepartmentSerializer
 
 from rest_framework.permissions import IsAuthenticated, IsAuthenticatedOrReadOnly
 from rest_framework import generics, viewsets, mixins
@@ -23,6 +23,25 @@ class Sub_categoryListAPIView(ListCreateAPIView):
 class Sub_categoryRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Sub_category.objects.all()
     serializer_class = Sub_categorySerializer
+
+
+class DepartmentListAPIView(ListCreateAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
+
+class DepartmentRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
+
+
+
+class EmployeeListAPIView(ListCreateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
+
+class EmployeeRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
 
 class ConsumptionListAPIView(ListCreateAPIView):
@@ -77,7 +96,7 @@ class ProductRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = (IsAdminOrReadOnly, )
-    
+
 
 
 class DebtorsListAPIView(ListCreateAPIView):

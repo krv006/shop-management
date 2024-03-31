@@ -34,6 +34,12 @@ urlpatterns = [
 
     path('camunalca/', CamunalcaListAPIView.as_view(), name='camunalca-list'),
     path('camunalca/<int:pk>/', CamunalcaRetrieveUpdateDestroyAPIView.as_view(), name='camunalca-detail'),
+
+    path('department/', DepartmentListAPIView.as_view(), name='department-list'),
+    path('department/<int:pk>/', DepartmentRetrieveUpdateDestroyAPIView.as_view(), name='department-detail'),
+
+    path('employee/', EmployeeListAPIView.as_view(), name='employee-list'),
+    path('employee/<int:pk>/', EmployeeRetrieveUpdateDestroyAPIView.as_view(), name='employee-detail'),
 ]
 
 # statistika oy xafta yil oyliklar qilish rasxodlar 

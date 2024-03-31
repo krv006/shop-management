@@ -1,11 +1,25 @@
 from rest_framework import serializers
 from .models import Category, Card, Consumption, Sub_category, Plastic_card, Product, Debtors, Workers, Camunalca, Dollars
+from .models import Department, Employee
 
 class Sub_categorySerializer(serializers.ModelSerializer):
 
     class Meta :
         model = Sub_category
         fields = ['name']
+
+
+class DepartmentSerializer(serializers.ModelSerializer):
+
+    class Meta :
+        model = Department
+        fields = ['name', 'is_active']
+
+class EmployeeSerializer(serializers.ModelSerializer):
+
+    class Meta :
+        model = Employee
+        fields = ['name', 'department']
 
 class CategorySerializer(serializers.ModelSerializer):
     

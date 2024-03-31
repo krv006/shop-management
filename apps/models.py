@@ -85,15 +85,15 @@ class Dollars(m.Model):
         return self.dollar
     
 
-# class Camunalca(m.Model):
-#     water = m.IntegerField()
-#     gas = m.IntegerField()
-#     electricity = m.IntegerField()
-#     wifi = m.IntegerField()
-#     lands = m.IntegerField()    # lands soliqlar
+class Camunalca(m.Model):
+    water = m.IntegerField()
+    gas = m.IntegerField()
+    electricity = m.IntegerField()
+    wifi = m.IntegerField()
+    lands = m.IntegerField()    # lands soliqlar
     
-#     def __int__(self):
-#         return self.water
+    def __int__(self):
+        return self.water
 
 class Workers(m.Model):
     workers_salary_month = m.IntegerField()
